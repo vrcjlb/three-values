@@ -47,7 +47,7 @@ const fbLoginOptions = {
         providers: [
           {
             id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('565209211119569', fbLoginOptions)
+            provider: new FacebookLoginProvider('565209211119569')
           }
         ]
       } as SocialAuthServiceConfig,

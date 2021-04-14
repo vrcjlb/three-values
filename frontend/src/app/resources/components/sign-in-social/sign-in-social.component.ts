@@ -2,10 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService, SocialUser } from 'angularx-social-login';
 // import { AuthService, FacebookLoginProvider, SocialUser } from 'angularx-social-login';
 
-const fbLoginOptions = {
-  scope: 'email'
-};
-
 @Component({
   selector: 'app-sign-in-social',
   templateUrl: './sign-in-social.component.html',
@@ -28,6 +24,9 @@ export class SignInSocialComponent implements OnInit {
   }
 
   signInWithFB(): void {
+    const fbLoginOptions = {
+      scope: 'public_profile,user_gender,email,user_age_range,user_birthday,user_location'
+    }
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID, fbLoginOptions);
   }
 
