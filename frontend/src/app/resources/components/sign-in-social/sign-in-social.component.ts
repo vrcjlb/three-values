@@ -27,11 +27,11 @@ export class SignInSocialComponent implements OnInit {
     window['FB'].login((response) => {
       console.log('login response', response);
       if (response.authResponse) {
-
         window['FB'].api('/me', {
           fields: 'last_name, first_name, email, age_range, birthday, location, gender, religion, education, id'
         }, (userInfo) => {
           this.userLogin = userInfo;
+          console.log(userInfo);
           this.landing.getPersonalized(this.userLogin);
         });
       } else {

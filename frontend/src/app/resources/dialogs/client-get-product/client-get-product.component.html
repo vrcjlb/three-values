@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Hola{{ fullname }} !</h1>
+<mat-divider></mat-divider>
+<div style="overflow: hidden;" mat-dialog-content>
+    <br><br>
+    <p>Gracias por solicitar el producto {{data.product.name}}, para terminar por favor indicanos estos datos</p>
+    <br>
+    <form [formGroup]="form">
+        <mat-form-field>
+            <mat-label>Número de Documento</mat-label>
+            <input matInput type="text" formControlName="document">
+            <mat-icon matSuffix>account_box</mat-icon>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Teléfono de contacto</mat-label>
+            <input matInput type="text" formControlName="phone">
+            <mat-icon matSuffix>phone</mat-icon>
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-button class="save" (click)="onOkClick()" cdkFocusInitial>Quiero que me llamen</button>
+</div>

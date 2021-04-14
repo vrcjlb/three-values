@@ -39,11 +39,12 @@
         <div class="offerItem" *ngFor="let product of productsList">
             <div class="group">
                 <div class="cardMax">
-                    <img [src]="product.banner" alt="">
+                    <img [src]="product.banner ? product.banner : 'https://www.bbva.pe/content/dam/public-web/peru/photos/cards/card-productos-digitales-mayo.png.img.960.1599837443512.png'"
+                        alt="">
                     <div class="contentCard">
                         <h2>{{product.name}}</h2>
                         <p>{{product.description}}</p>
-                        <button mat-button>{{product.name}}</button>
+                        <button (click)="getService(product)" mat-button>{{product.name}}</button>
                     </div>
                 </div>
             </div>
@@ -51,7 +52,7 @@
                 <div class="card" *ngFor="let sub of product.subProducts">
                     <span>{{sub.name}}</span>
                     <p>{{sub.description}}</p>
-                    <button mat-button>Conoce más</button>
+                    <button (click)="getService(sub)" mat-button>Conoce más</button>
                 </div>
             </div>
         </div>

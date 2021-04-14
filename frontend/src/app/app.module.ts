@@ -11,12 +11,14 @@ import { MaterialModule } from './mareial.module';
 
 import { SignInSocialComponent } from './resources/components/sign-in-social/sign-in-social.component';
 import { LandingComponent } from './resources/view/landing/landing.component';
+import { ClientGetProductComponent } from './resources/dialogs/client-get-product/client-get-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInSocialComponent,
-    LandingComponent
+    LandingComponent,
+    ClientGetProductComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +28,10 @@ import { LandingComponent } from './resources/view/landing/landing.component';
     MaterialModule,
     MatNativeDateModule,
     ReactiveFormsModule,
+  ],
+  entryComponents: [
+    ClientGetProductComponent,
+    LandingComponent
   ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
