@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { LandingComponent } from '../../view/landing/landing.component';
 
 @Component({
   selector: 'app-sign-in-social',
@@ -8,8 +10,15 @@ import { Component, OnInit } from '@angular/core';
 export class SignInSocialComponent implements OnInit {
 
   loggedIn: boolean;
-  userLogin: any;
-  constructor() { }
+  userLogin: any = null;
+
+  constructor(private _snackBar: MatSnackBar, private landing: LandingComponent) { }
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 2000,
+    });
+  }
 
   ngOnInit() {
   }
@@ -23,11 +32,10 @@ export class SignInSocialComponent implements OnInit {
           fields: 'last_name, first_name, email, age_range, birthday, location, gender, religion, education, id'
         }, (userInfo) => {
           this.userLogin = userInfo;
-          console.log("user information");
-          console.log(userInfo);
+          this.landing.getPersonalized(this.userLogin);
         });
       } else {
-        console.log('User login failed');
+        this.openSnackBar('Perdimos la conexión con facebook', ':)');
       }
     }, { scope: 'public_profile,user_gender,email,user_age_range,user_birthday,user_location' });
   }
