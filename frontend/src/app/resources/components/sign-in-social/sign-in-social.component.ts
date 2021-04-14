@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService, SocialUser } from 'angularx-social-login';
-// import { AuthService, FacebookLoginProvider, SocialUser } from 'angularx-social-login';
 
 @Component({
   selector: 'app-sign-in-social',
@@ -9,29 +7,29 @@ import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthService, SocialUs
 })
 export class SignInSocialComponent implements OnInit {
 
-  user: SocialUser;
   loggedIn: boolean;
-
-
-  constructor(private authService: SocialAuthService) { }
+  userLogin: any;
+  constructor() { }
 
   ngOnInit() {
-    this.authService.authState.subscribe((user) => {
-      this.user = user;
-      this.loggedIn = (user != null);
-      console.log(this.user);
-    });
   }
 
-  signInWithFB(): void {
-    const fbLoginOptions = {
-      scope: 'public_profile,user_gender,email,user_age_range,user_birthday,user_location'
-    }
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID, fbLoginOptions);
-  }
+  login() {
+    window['FB'].login((response) => {
+      console.log('login response', response);
+      if (response.authResponse) {
 
-  signOut(): void {
-    this.authService.signOut();
+        window['FB'].api('/me', {
+          fields: 'last_name, first_name, email, age_range, birthday, location, gender, religion, education, id'
+        }, (userInfo) => {
+          this.userLogin = userInfo;
+          console.log("user information");
+          console.log(userInfo);
+        });
+      } else {
+        console.log('User login failed');
+      }
+    }, { scope: 'public_profile,user_gender,email,user_age_range,user_birthday,user_location' });
   }
 
 }
