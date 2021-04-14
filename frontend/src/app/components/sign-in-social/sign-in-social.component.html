@@ -1,0 +1,46 @@
+<div class="example-container mat-elevation-z8">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>
+        <h2>
+          Hola
+          <span *ngIf="loggedIn === true"
+            >{{ user.firstName }} {{ user.lastName }},
+          </span>
+        </h2>
+      </mat-card-title>
+      <mat-card-subtitle>
+        <button
+          type="button"
+          (click)="signInWithFB()"
+          *ngIf="!loggedIn"
+          mat-flat-button
+          color="primary"
+        >
+          Ingresar con Facebook
+        </button>
+        <button
+          type="button"
+          (click)="signOut()"
+          *ngIf="loggedIn"
+          mat-flat-button
+          color="primary"
+        >
+          Salir
+        </button>
+      </mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+  <mat-card class="example-card" *ngIf="loggedIn === true">
+    <mat-card-header>
+      <mat-card-title>
+        <h2>Perfil:</h2>
+      </mat-card-title>
+      <mat-card-subtitle
+        >Nombre: {{ user.firstName }} {{ user.lastName }}</mat-card-subtitle
+      >
+    </mat-card-header>
+    <img mat-card-image [src]="user.photoUrl" alt="My Facebook Photo" />
+    <mat-card-content> Contenido </mat-card-content>
+  </mat-card>
+</div>
