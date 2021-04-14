@@ -1,23 +1,21 @@
-.example-container {
-  position: relative;
-  padding: 5px;
-  background-color: rgb(55, 2, 124);
-}
-
-.example-loading-shade {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 56px;
-  right: 0;
-  background: rgba(0, 0, 0, 0.15);
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.example-card {
-  margin: 5px;
-  padding-bottom: 40px;
+button {
+  will-change: background-position;
+  background-size: 210% 100%;
+  background-position: 99% center;
+  background-repeat: no-repeat;
+  transition: background-position .66667s cubic-bezier(.24, .22, .31, 1.07);
+  background-color: #1973b8;
+  background-image: linear-gradient(100deg, #1464a5 50%, #1973b8 50%);
+  font-size: 15px;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0;
+  max-width: 100%;
+  line-height: 24px;
+  padding: 12px 32px;
+  border-radius: 1px;
+  min-width: 76px;
+  display: inline-block;
+  border: 0;
+  cursor: pointer;
 }

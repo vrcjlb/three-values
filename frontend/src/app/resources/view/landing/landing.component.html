@@ -1,7 +1,35 @@
 <mat-toolbar>
-    <span>BBVA</span>
+    <div class="logo">
+        <img src="..\assets\images\logo_bbva_blanco.svg" alt="logo bbva">
+    </div>
+    <div class="navigation">
+        <div class="link active">
+            Personas
+        </div>
+        <div class="link">
+            Empresas
+        </div>
+    </div>
     <span class="spacer"></span>
-    <span>Menu</span>
-    <span>Menu</span>
+    <div class="acction">
+        <div class="createAccount">
+            <mat-icon>person_add</mat-icon>
+            <span>Crear una Cuenta</span>
+        </div>
+        <div class="login">
+            <button mat-flat-button color="primary" class="btn-bbva">Banca por Internet</button>
+        </div>
+        <button mat-icon-button>
+            <mat-icon>search</mat-icon>
+        </button>
+    </div>
 </mat-toolbar>
-<app-sign-in-social></app-sign-in-social>
+<div class="section">
+    <div class="news">
+        <p>¡DESCUBRE NUESTRA NUEVA SECCIÓN DE SERVICIOS!</p>
+        <span>Encuentra ofertas y productos a tu medida</span>
+    </div>
+    <div class="button_login">
+        <app-sign-in-social></app-sign-in-social>
+    </div>
+</div>
