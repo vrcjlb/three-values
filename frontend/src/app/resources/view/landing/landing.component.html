@@ -25,11 +25,86 @@
     </div>
 </mat-toolbar>
 <div class="section">
-    <div class="news">
-        <p>¡DESCUBRE NUESTRA NUEVA SECCIÓN DE SERVICIOS!</p>
-        <span>Encuentra ofertas y productos a tu medida</span>
+    <div class="news" *ngFor="let item of news">
+        <p>{{item.title}}</p>
+        <span>{{item.sub}}</span>
     </div>
     <div class="button_login">
         <app-sign-in-social></app-sign-in-social>
+    </div>
+</div>
+<div class="myZone">
+    <p class="title">¡Tenemos lo que buscas!</p>
+    <div class="offers">
+        <div class="offerItem">
+            <div class="group">
+                <div class="cardMax">
+                    <img src="./../../../../assets/images/BBVA_CVV_DINAMICO.jpg" alt="">
+                    <div class="contentCard">
+                        <h2>Productos Digitales</h2>
+                        <p>Conoce todos los productos que puedes contratar 100% online desde casa en nuestra App y
+                            Banca por Internet.</p>
+                        <button mat-button>Productos Digitales</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <span>BBVA T-Cambio</span>
+                    <p>Aprovecha un tipo de cambio exclusivo, en todo momento y desde tu celular.</p>
+                    <button mat-button>Conoce más</button>
+                </div>
+                <div class="card">
+                    <span>BBVA T-Cambio</span>
+                    <p>Aprovecha un tipo de cambio exclusivo, en todo momento y desde tu celular.</p>
+                    <button mat-button>Conoce más</button>
+                </div>
+                <div class="card">
+                    <span>BBVA T-Cambio</span>
+                    <p>Aprovecha un tipo de cambio exclusivo, en todo momento y desde tu celular.</p>
+                    <button mat-button>Conoce más</button>
+                </div>
+                <div class="card">
+                    <span>BBVA T-Cambio</span>
+                    <p>Aprovecha un tipo de cambio exclusivo, en todo momento y desde tu celular.</p>
+                    <button mat-button>Conoce más</button>
+                </div>
+            </div>
+        </div>
+        <div class="offerItem">
+            <div class="group">
+                <div class="cardMax">
+                    <img src="./../../../../assets/images/card-productos-digitales.png" alt="">
+                    <div class="contentCard">
+                        <h2>Productos Digitales</h2>
+                        <p>Conoce todos los productos que puedes contratar 100% online desde casa en nuestra App y
+                            Banca por Internet.</p>
+                        <button mat-button>Productos Digitales</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <span>BBVA T-Cambio</span>
+                    <p>Aprovecha un tipo de cambio exclusivo, en todo momento y desde tu celular.</p>
+                    <button mat-button>Conoce más</button>
+                </div>
+                <div class="card">
+                    <span>BBVA T-Cambio</span>
+                    <p>Aprovecha un tipo de cambio exclusivo, en todo momento y desde tu celular.</p>
+                    <button mat-button>Conoce más</button>
+                </div>
+                <div class="card">
+                    <span>BBVA T-Cambio</span>
+                    <p>Aprovecha un tipo de cambio exclusivo, en todo momento y desde tu celular.</p>
+                    <button mat-button>Conoce más</button>
+                </div>
+                <div class="card">
+                    <span>BBVA T-Cambio</span>
+                    <p>Aprovecha un tipo de cambio exclusivo, en todo momento y desde tu celular.</p>
+                    <button mat-button>Conoce más</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
